@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import Reveal from "@/components/reveal";
 
 const tiers = [
   {
@@ -31,19 +32,21 @@ export default function Pricing() {
   return (
     <section id="pricing" className="bg-white">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal as="div" className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Paket fleksibel untuk kebutuhanmu
           </h2>
           <p className="mt-3 text-gray-600">
             Transparan, bisa dikustom, dan fokus hasil. Harga dapat disesuaikan dengan scope proyek.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {tiers.map((tier) => (
-            <div
+          {tiers.map((tier, idx) => (
+            <Reveal
               key={tier.name}
+              as="div"
+              delay={idx * 100}
               className={`rounded-2xl border bg-white p-6 shadow-sm ${tier.highlight ? "ring-2 ring-violet-600" : ""}`}
             >
               <div className="flex items-baseline justify-between">
@@ -72,7 +75,7 @@ export default function Pricing() {
               >
                 {tier.cta.label}
               </a>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

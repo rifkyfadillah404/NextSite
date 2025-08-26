@@ -1,4 +1,5 @@
 import { BarChart3, Globe, Settings, Shield, Sparkles, Users } from "lucide-react";
+import Reveal from "@/components/reveal";
 
 const features = [
   {
@@ -37,24 +38,29 @@ export default function Features() {
   return (
     <section id="features" className="bg-white">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal as="div" className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Layanan yang kami tawarkan
           </h2>
           <p className="mt-3 text-gray-600">
             Solusi lengkap pembuatan website: dari desain, development, hingga maintenance.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map(({ title, desc, Icon }) => (
-            <div key={title} className="rounded-2xl border bg-white p-6 shadow-sm hover:shadow">
+          {features.map(({ title, desc, Icon }, idx) => (
+            <Reveal
+              key={title}
+              as="div"
+              delay={idx * 80}
+              className="rounded-2xl border bg-white p-6 shadow-sm hover:shadow"
+            >
               <div className="flex items-center gap-3">
                 <Icon className="h-6 w-6 text-violet-600" />
                 <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
               </div>
               <p className="mt-2 text-sm text-gray-600">{desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

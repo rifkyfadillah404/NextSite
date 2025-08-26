@@ -24,19 +24,19 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b backdrop-blur supports-[backdrop-filter]:bg-white/60 ${
-        scrolled ? "bg-white/90 shadow-sm" : "bg-white/70"
+      className={`sticky top-0 z-50 border-b border-gray-800 backdrop-blur supports-[backdrop-filter]:bg-black/60 ${
+        scrolled ? "bg-black/90 shadow-sm" : "bg-black/70"
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Brand */}
         <Link href="/" className="group flex items-center gap-2">
-          <Rocket className="h-6 w-6 text-violet-600" />
+          <Rocket className="h-6 w-6 text-white" />
           <div className="flex flex-col leading-tight">
-            <span className="bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text text-base font-extrabold text-transparent">
+            <span className="bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-base font-extrabold text-transparent">
               NextSite
             </span>
-            <span className="text-[10px] tracking-wide text-gray-500 group-hover:text-gray-700">
+            <span className="text-[10px] tracking-wide text-gray-400 group-hover:text-gray-200">
               Web Agency
             </span>
           </div>
@@ -48,7 +48,7 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-1.5 text-sm text-gray-700 transition hover:bg-gray-100/60 hover:text-gray-900"
+              className="rounded-md px-3 py-1.5 text-sm text-gray-200 transition hover:bg-gray-800 hover:text-white"
             >
               {item.label}
             </a>
@@ -58,10 +58,10 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center">
           <a
-            href="https://wa.me/6281234567890?text=Halo%20NextSite,%20saya%20ingin%20konsultasi%20pembuatan%20website"
+            href="https://wa.me/6285780520587?text=Halo%20NextSite,%20saya%20ingin%20konsultasi%20pembuatan%20website"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-violet-600 px-3 py-1.5 text-sm text-white shadow-sm transition hover:bg-violet-700"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-sm text-black shadow-sm transition hover:bg-gray-200"
           >
             <Phone className="h-4 w-4" /> Chat WhatsApp
           </a>
@@ -69,7 +69,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="inline-flex items-center justify-center rounded-md border px-2.5 py-1.5 md:hidden"
+          className="inline-flex items-center justify-center rounded-md border border-gray-700 text-gray-200 hover:bg-gray-800 px-2.5 py-1.5 md:hidden"
           aria-expanded={open}
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
@@ -80,24 +80,24 @@ export default function Navbar() {
 
       {/* Mobile panel */}
       {open && (
-        <div className="md:hidden border-t bg-white">
+        <div className="md:hidden border-t border-gray-800 bg-black">
           <div className="mx-auto max-w-6xl px-4 py-3 space-y-1.5">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-sm text-gray-800 transition hover:bg-gray-50"
+                className="block rounded-md px-3 py-2 text-sm text-gray-200 transition hover:bg-gray-800"
               >
                 {item.label}
               </a>
             ))}
             <a
-              href="https://wa.me/6281234567890?text=Halo%20NextSite,%20saya%20ingin%20konsultasi%20pembuatan%20website"
+              href="https://wa.me/6285780520587?text=Halo%20NextSite,%20saya%20ingin%20konsultasi%20pembuatan%20website"
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-2 block rounded-lg bg-violet-600 px-3 py-2 text-center text-sm font-medium text-white transition hover:bg-violet-700"
+              className="mt-2 block rounded-lg bg-white px-3 py-2 text-center text-sm font-medium text-black transition hover:bg-gray-200"
             >
               Chat WhatsApp
             </a>

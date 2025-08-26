@@ -1,3 +1,5 @@
+import Reveal from "@/components/reveal";
+
 export default function Trustbar() {
   const icons = [
     { name: "React", className: "devicon-react-original colored" },
@@ -24,13 +26,13 @@ export default function Trustbar() {
   return (
     <section aria-label="Trusted by" className="bg-white">
       <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
-        <div className="text-center">
+        <Reveal as="div" className="text-center">
           <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
             Dipercaya brand & dibangun dengan stack populer
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-8 relative group">
+        <Reveal as="div" delay={120} className="mt-8 relative group">
           <div className="overflow-hidden">
             <div className="flex flex-nowrap items-center gap-12 py-3 will-change-transform animate-[scroll-right_28s_linear_infinite] group-hover:[animation-play-state:paused]">
               {loop.map((it, idx) => (
@@ -48,7 +50,7 @@ export default function Trustbar() {
 
           <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent" />
-        </div>
+        </Reveal>
       </div>
     </section>
   );
