@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useRef, useState } from "react";
 
 type RevealProps = {
@@ -15,9 +14,9 @@ export default function Reveal({
   className = "",
   delay = 0,
   once = true,
-  as: Tag = "div",
+  as = "div",
 }: RevealProps) {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
@@ -42,20 +41,21 @@ export default function Reveal({
     return () => observer.disconnect();
   }, [once]);
 
-  // @ts-expect-error dynamic Tag typing
-  return (
-    <Tag
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ref={ref as any}
-      className={[
-        "transition-all duration-700 ease-out",
-        "will-change-transform will-change-opacity",
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
-        className,
-      ].join(" ")}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </Tag>
+  const combinedClassName = [
+    "transition-all duration-700 ease-out",
+    "will-change-transform will-change-opacity",
+    inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
+    className,
+  ].join(" ");
+
+  // Use React.createElement to avoid TypeScript polymorphic component issues
+  return React.createElement(
+    as,
+    {
+      ref: ref,
+      className: combinedClassName,
+      style: { transitionDelay: `${delay}ms` },
+    },
+    children
   );
 }
