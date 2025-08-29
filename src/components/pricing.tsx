@@ -47,34 +47,46 @@ export default function Pricing() {
               key={tier.name}
               as="div"
               delay={idx * 100}
-              className={`rounded-2xl border bg-white p-6 shadow-sm ${tier.highlight ? "ring-2 ring-violet-600" : ""}`}
+              className="group"
             >
-              <div className="flex items-baseline justify-between">
-                <h3 className="text-lg font-semibold text-gray-900">{tier.name}</h3>
-                <div className="text-2xl font-bold text-gray-900">{tier.price}</div>
-              </div>
-              <p className="mt-2 text-sm text-gray-600">{tier.desc}</p>
-
-              <ul className="mt-6 space-y-2 text-sm text-gray-700">
-                {tier.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600" /> {f}
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href={tier.cta.href}
-                target="_blank"
-                rel="noreferrer"
-                className={`mt-6 inline-flex w-full items-center justify-center rounded-md px-4 py-2 text-sm ${
+              <div
+                className={`relative rounded-2xl p-[1px] transition-transform duration-200 group-hover:-translate-y-1 ${
                   tier.highlight
-                    ? "bg-violet-600 text-white hover:bg-violet-700"
-                    : "border text-gray-900 hover:bg-gray-50"
+                    ? "bg-gradient-to-br from-violet-500/30 via-fuchsia-500/25 to-transparent"
+                    : "bg-gradient-to-br from-gray-200/40 to-transparent"
                 }`}
               >
-                {tier.cta.label}
-              </a>
+                <div
+                  className={`rounded-2xl border bg-white p-6 shadow-sm transition-shadow ${
+                    tier.highlight ? "shadow-glow" : "group-hover:shadow-md"
+                  }`}
+                >
+                  <div className="flex items-baseline justify-between">
+                    <h3 className="text-lg font-semibold text-gray-900">{tier.name}</h3>
+                    <div className="text-2xl font-bold text-gray-900">{tier.price}</div>
+                  </div>
+                  <p className="mt-2 text-sm text-gray-600">{tier.desc}</p>
+ 
+                  <ul className="mt-6 space-y-2 text-sm text-gray-700">
+                    {tier.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-emerald-600" /> {f}
+                      </li>
+                    ))}
+                  </ul>
+ 
+                  <a
+                    href={tier.cta.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`mt-6 inline-flex w-full items-center justify-center rounded-md px-4 py-2 text-sm ${
+                      tier.highlight ? "btn-primary" : "btn-outline"
+                    }`}
+                  >
+                    {tier.cta.label}
+                  </a>
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>

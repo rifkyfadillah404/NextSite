@@ -3,8 +3,9 @@ import { Github, Linkedin, Mail, Twitter, Rocket } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-12">
+    <footer className="relative bg-white">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-400/60 to-transparent" />
+      <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           {/* Brand + Social */}
           <div className="lg:col-span-2">
@@ -98,7 +99,7 @@ export default function Footer() {
               />
               <button
                 type="button"
-                className="inline-flex items-center justify-center rounded-md bg-violet-600 px-3 py-2 text-sm text-white hover:bg-violet-700"
+                className="btn-primary inline-flex items-center justify-center px-3 py-2 text-sm"
               >
                 Join
               </button>

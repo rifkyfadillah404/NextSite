@@ -30,7 +30,7 @@ const TESTIMONIALS: Testimonial[] = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-gradient-to-b from-white to-fuchsia-50">
+    <section id="testimonials" className="relative bg-gradient-to-b from-white to-fuchsia-50">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <Reveal as="div" className="mx-auto max-w-2xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border bg-white px-3 py-1 text-xs font-medium text-gray-700 shadow-sm">
@@ -51,14 +51,18 @@ export default function Testimonials() {
               key={t.name}
               as="figure"
               delay={idx * 90}
-              className="relative rounded-2xl border bg-white p-6 shadow-sm transition hover:shadow md:p-7"
+              className="group"
             >
-              <Quote className="absolute right-5 top-5 h-5 w-5 text-violet-600/30" />
-              <blockquote className="text-gray-800">“{t.quote}”</blockquote>
-              <figcaption className="mt-5 border-t pt-4">
-                <div className="font-semibold text-gray-900">{t.name}</div>
-                <div className="text-sm text-gray-600">{t.role}</div>
-              </figcaption>
+              <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 transition-transform duration-200 group-hover:-translate-y-1">
+                <div className="relative rounded-2xl border bg-white p-6 shadow-sm transition-shadow group-hover:shadow-md md:p-7">
+                  <Quote className="absolute right-5 top-5 h-5 w-5 text-violet-600/30" />
+                  <blockquote className="text-gray-800">“{t.quote}”</blockquote>
+                  <figcaption className="mt-5 border-t pt-4">
+                    <div className="font-semibold text-gray-900">{t.name}</div>
+                    <div className="text-sm text-gray-600">{t.role}</div>
+                  </figcaption>
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>

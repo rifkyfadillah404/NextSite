@@ -53,13 +53,17 @@ export default function Features() {
               key={title}
               as="div"
               delay={idx * 80}
-              className="rounded-2xl border bg-white p-6 shadow-sm hover:shadow"
+              className="group"
             >
-              <div className="flex items-center gap-3">
-                <Icon className="h-6 w-6 text-violet-600" />
-                <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+              <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 transition-transform duration-200 group-hover:-translate-y-1">
+                <div className="rounded-2xl border bg-white p-6 shadow-sm transition-shadow group-hover:shadow-md">
+                  <div className="flex items-center gap-3">
+                    <Icon className="h-6 w-6 text-violet-600" />
+                    <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+                  </div>
+                  <p className="mt-2 text-sm text-gray-600">{desc}</p>
+                </div>
               </div>
-              <p className="mt-2 text-sm text-gray-600">{desc}</p>
             </Reveal>
           ))}
         </div>
