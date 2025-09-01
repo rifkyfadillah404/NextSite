@@ -4,14 +4,14 @@ import { Github, Linkedin, Mail, Twitter, Rocket } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="relative bg-white">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-400/60 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-300/60 to-transparent" />
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           {/* Brand + Social */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <Rocket className="h-6 w-6 text-violet-600" />
-              <span className="bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text text-lg font-semibold text-transparent">
+              <Rocket className="h-6 w-6 text-gray-700" />
+              <span className="text-lg font-semibold text-gray-900">
                 NextSite
               </span>
             </Link>
@@ -95,7 +95,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="you@company.com"
-                className="w-full rounded-md border px-3 py-2 text-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-violet-500"
+                className="w-full rounded-md border px-3 py-2 text-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-gray-800"
               />
               <button
                 type="button"

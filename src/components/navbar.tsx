@@ -33,7 +33,7 @@ export default function Navbar() {
         <Link href="/" className="group flex items-center gap-2">
           <Rocket className="h-6 w-6 text-white" />
           <div className="flex flex-col leading-tight">
-            <span className="bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-base font-extrabold text-transparent">
+            <span className="text-base font-extrabold text-white">
               NextSite
             </span>
             <span className="text-[10px] tracking-wide text-gray-400 group-hover:text-gray-200">
@@ -48,7 +48,7 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="relative rounded-md px-3 py-1.5 text-sm text-gray-200 transition hover:text-white after:absolute after:left-3 after:right-3 after:-bottom-[2px] after:h-[2px] after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-violet-500 after:to-fuchsia-500 after:transition-transform after:duration-200 hover:after:scale-x-100"
+              className="relative rounded-md px-3 py-1.5 text-sm text-gray-200 transition hover:text-white after:absolute after:left-3 after:right-3 after:-bottom-[2px] after:h-[2px] after:origin-left after:scale-x-0 after:rounded-full after:bg-white/60 after:transition-transform after:duration-200 hover:after:scale-x-100"
             >
               {item.label}
             </a>

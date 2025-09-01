@@ -3,10 +3,10 @@ import Reveal from "@/components/reveal";
 
 export default function CTA() {
   return (
-    <section id="cta" className="relative overflow-hidden bg-gradient-to-b from-white to-fuchsia-50">
-      {/* Ambient mesh gradients */}
-      <div className="pointer-events-none absolute -top-10 left-1/2 h-48 w-[90vw] -translate-x-1/2 rounded-full bg-gradient-to-r from-violet-500/20 via-fuchsia-500/20 to-transparent blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-12 right-0 h-52 w-72 rounded-full bg-gradient-to-tr from-fuchsia-400/15 to-violet-500/20 blur-3xl" />
+    <section id="cta" className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+      {/* Ambient mesh gradients (neutral) */}
+      <div className="pointer-events-none absolute -top-10 left-1/2 h-48 w-[90vw] -translate-x-1/2 rounded-full bg-gradient-to-r from-gray-300/10 via-gray-200/10 to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-12 right-0 h-52 w-72 rounded-full bg-gradient-to-tr from-gray-300/10 to-transparent blur-3xl" />
 
       <div className="mx-auto max-w-7xl px-4 py-16 text-center md:py-24">
         <div className="mx-auto max-w-2xl">
@@ -14,7 +14,7 @@ export default function CTA() {
             as="div"
             className="inline-flex items-center gap-2 rounded-full border bg-white/80 px-3 py-1 text-xs font-medium text-gray-700 shadow-sm backdrop-blur"
           >
-            <Rocket className="h-4 w-4 text-violet-600" />
+            <Rocket className="h-4 w-4 text-gray-700" />
             Siap tingkatkan kehadiran online?
           </Reveal>
           <Reveal as="h2" delay={120} className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

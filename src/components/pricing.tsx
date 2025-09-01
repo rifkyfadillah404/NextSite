@@ -52,7 +52,7 @@ export default function Pricing() {
               <div
                 className={`relative rounded-2xl p-[1px] transition-transform duration-200 group-hover:-translate-y-1 ${
                   tier.highlight
-                    ? "bg-gradient-to-br from-violet-500/30 via-fuchsia-500/25 to-transparent"
+                    ? "bg-gradient-to-br from-gray-300/60 to-transparent"
                     : "bg-gradient-to-br from-gray-200/40 to-transparent"
                 }`}
               >
@@ -70,7 +70,7 @@ export default function Pricing() {
                   <ul className="mt-6 space-y-2 text-sm text-gray-700">
                     {tier.features.map((f) => (
                       <li key={f} className="flex items-center gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-600" /> {f}
+                        <CheckCircle2 className="h-4 w-4 text-gray-700" /> {f}
                       </li>
                     ))}
                   </ul>
